@@ -1,8 +1,10 @@
 #include <string.h>
 #include <stdio.h>
 
+#define MAX 1001
+
 void sum(const char *x, const char *y) {
-    char z[1001];
+    char z[MAX];
     int i, lx = strlen(x) - 1, ly = strlen(y) - 1, up = 0;
     for (i = 0; lx >= 0 || ly >= 0; ++i, --lx, --ly) {
         if (lx >= 0 && ly >= 0) {
@@ -29,15 +31,15 @@ void sum(const char *x, const char *y) {
 
 int main() {
     int l, m = 1;
-    char x[1001], y[1001];
+    char x[MAX], y[MAX];
 
     scanf("%d", &l);
     while (l--) {
         scanf("%s %s", x, y);
 
-        printf("Case %d\n%s + %s = ", m++, x, y);
+        printf("Case %d:\n%s + %s = ", m++, x, y);
         sum(x, y);
-        if (l != 1) {
+        if (l != 0) {
             printf("\n");
         }
     }
